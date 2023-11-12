@@ -1,0 +1,113 @@
+﻿@model StudentManagement.ModelsView.StudentModelView;
+@{
+    ViewData["Title"] = "AddStudent";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+<div class="card">
+    <div class="card-header">
+        <strong>Basic Form</strong> Elements
+    </div>
+    <div class="card-body card-block">
+        <form asp-action="AddStudent" method="post" enctype="multipart/form-data" class="form-horizontal">
+            <div class="row form-group">
+                <div class="col col-md-3">
+                    <label for="disabled-input" class=" form-control-label">Student Code</label>
+                </div>
+                <div class="col-12 col-md-9">
+                    <input type="text" id="disabled-input" name="disabled-input" placeholder="Auto Generate Student Code" disabled="" class="form-control">
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col col-md-3">
+                    <label for="text-input" class=" form-control-label">First Name</label>
+                </div>
+                <div class="col-12 col-md-9">
+                    <input type="text" asp-for="FirstName" placeholder="First Name" class="form-control">
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col col-md-3">
+                    <label for="email-input" class=" form-control-label">Last Name</label>
+                </div>
+                <div class="col-12 col-md-9">
+                    <input type="text" id="email-input" asp-for="LastName" placeholder="Last Name" class="form-control">
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col col-md-3">
+                    <label for="email-input" class=" form-control-label">Phone</label>
+                </div>
+                <div class="col-12 col-md-9">
+                    <input type="number" id="email-input" asp-for="PhoneNumber" placeholder="Phone Number" class="form-control">
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col col-md-3">
+                    <label for="email-input" class=" form-control-label">Sex</label>
+                </div>
+                <div class="col-12 col-md-9">
+                    <input type="text" asp-for="Sex" placeholder="Sex" class="form-control">
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col col-md-3">
+                    <label for="email-input" class=" form-control-label">Birthday</label>
+                </div>
+                <div class="col-12 col-md-9">
+                    <input type="date" asp-for="Birthday" placeholder="Birthday" class="form-control">
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col col-md-3">
+                    <label for="select" class=" form-control-label">Class</label>
+                </div>
+                <div class="col-12 col-md-9">
+                    <select asp-for="IdClass" asp-items="@ViewBag.Class" class="form-control">
+                        <option value="0">Please select class</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col col-md-3">
+                    <label for="select" class=" form-control-label">Department</label>
+                </div>
+                <div class="col-12 col-md-9">
+                    <select asp-for="IdDepart" asp-items="@ViewBag.Depart" class="form-control">
+                        <option value="0">Please select department</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col col-md-3">
+                    <label for="select" class=" form-control-label">Course</label>
+                </div>
+                <div class="col-12 col-md-9">
+                    <select asp-for="IdCourse" asp-items="@ViewBag.Course" class="form-control">
+                        <option value="0">Please select course</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col col-md-3">
+                    <label for="select" class=" form-control-label">Study Program</label>
+                </div>
+                <div class="col-12 col-md-9">
+                    <select asp-for="IdStuPro" asp-items="@ViewBag.StuPro" class="form-control">
+                        <option value="0">Please select study program</option>
+                    </select>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary btn-sm">
+                    <i class="fa fa-dot-circle-o"></i> Submit
+                </button>
+                <button type="reset" class="btn btn-danger btn-sm">
+                    <i class="fa fa-ban"></i> Reset
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

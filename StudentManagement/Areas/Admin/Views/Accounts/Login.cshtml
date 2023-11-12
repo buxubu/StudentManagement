@@ -1,0 +1,52 @@
+﻿@model StudentManagement.ModelsView.LoginModelView
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutLogin.cshtml";
+}
+<div class="login-content">
+    <div class="login-logo">
+        <a href="#">
+            <img src="~/AdminAsset/images/PhucNgyn.png" style="width:100px; height:100px" alt="phuc" />
+        </a>
+    </div>
+    <div class="login-form">
+        <form asp-controller="Accounts" asp-action="Login" method="post">
+            <div class="form-group">
+                <label>Username</label>
+                <input class="au-input au-input--full" asp-for="Username" type="user" name="Username" placeholder="Username...">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input class="au-input au-input--full" asp-for="Password" type="password" name="password" placeholder="Password">
+            </div>
+            <div class="login-checkbox">
+                <label>
+                    <input asp-for="KeepMeLogin" type="checkbox" name="remember">Keep Me Login
+                </label>
+                <label>
+                    <a href="#">Forgotten Password?</a>
+                </label>
+            </div>
+            @if (ViewData["ErrorClaims"] != null)
+            {
+                <span style="margin:120px;color:red">@ViewData["ErrorClaims"]</span>
+
+                <br />
+            }
+            <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign in</button>
+            <div class="social-login-content">
+                <div class="social-button">
+                    <button class="au-btn au-btn--block au-btn--blue m-b-20">sign in with facebook</button>
+                    <button class="au-btn au-btn--block au-btn--blue2">sign in with twitter</button>
+                </div>
+            </div>
+        </form>
+        <div class="register-link">
+            <p>
+                Don't you have account?
+                <a href="#">Sign Up Here</a>
+            </p>
+        </div>
+    </div>
+</div>

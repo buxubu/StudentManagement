@@ -1,0 +1,102 @@
+﻿@model StudentManagement.ModelsView.StudentModelView
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Infomation Student</h1>
+<div class="card">
+    <div class="card-header">
+        <strong>Detail</strong> Student
+    </div>
+    <div class="card-body card-block">
+        @*<form asp-action="AddStudent" method="post" enctype="multipart/form-data" class="form-horizontal">*@
+        <div class="row form-group">
+            <div class="col col-md-3">
+                <label for="disabled-input" class=" form-control-label">Student Code</label>
+            </div>
+            <div class="col-12 col-md-9">
+                <input type="text" id="disabled-input" name="disabled-input" asp-for="StudentCode" disabled="" class="form-control">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col col-md-3">
+                <label for="text-input" class=" form-control-label">First Name</label>
+            </div>
+            <div class="col-12 col-md-9">
+                <input type="text" asp-for="FirstName" disabled="" class="form-control">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col col-md-3">
+                <label for="email-input" class=" form-control-label">Last Name</label>
+            </div>
+            <div class="col-12 col-md-9">
+                <input type="text" id="email-input" asp-for="LastName" disabled="" class="form-control">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col col-md-3">
+                <label for="email-input" class=" form-control-label">Phone</label>
+            </div>
+            <div class="col-12 col-md-9">
+                <input type="number" id="email-input" asp-for="PhoneNumber" disabled="" class="form-control">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col col-md-3">
+                <label for="email-input" class=" form-control-label">Sex</label>
+            </div>
+            <div class="col-12 col-md-9">
+                <input type="text" asp-for="Sex" disabled="" class="form-control">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col col-md-3">
+                <label for="email-input" class=" form-control-label">Birthday</label>
+            </div>
+            <div class="col-12 col-md-9">
+                <input type="date" asp-for="Birthday" disabled="" class="form-control">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col col-md-3">
+                <label for="email-input" class=" form-control-label">Class</label>
+            </div>
+            <div class="col-12 col-md-9">
+                <input type="text" asp-for="NameClass" disabled="" class="form-control">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col col-md-3">
+                <label for="email-input" class=" form-control-label">Department</label>
+            </div>
+            <div class="col-12 col-md-9">
+                <input type="text" asp-for="NameDepart" disabled="" class="form-control">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col col-md-3">
+                <label for="email-input" class=" form-control-label">Course</label>
+            </div>
+            <div class="col-12 col-md-9">
+                <input type="text" asp-for="StartYear" disabled="" class="form-control">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col col-md-3">
+                <label for="email-input" class=" form-control-label">Study Program</label>
+            </div>
+            <div class="col-12 col-md-9">
+                <input type="text" asp-for="NameStuPro" disabled="" class="form-control">
+            </div>
+        </div>
+        <div>
+            <a asp-action="Edit" asp-route-id="@Model.IdStudent">Edit</a> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </div>
+</div>
+
+
+
